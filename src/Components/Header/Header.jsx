@@ -1,18 +1,21 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Header = () => {
+  const { users, logOut } = useContext(AuthContext);
+  console.log("Header Users:", users);
+
   const navlinks = [
     { path: "/", label: "Home" },
     { path: "/allvisa", label: "All Visas" },
     { path: "/addvisa", label: "Add Visa" },
     { path: "/myaddvisa", label: "My Added Visas" },
     { path: "/myvisaapplication", label: "My Visa Applications" },
-    { path: "/login", label: "Login" },
-    { path: "/register", label: "Register" },
   ];
 
   return (
-    <div className="navbar bg-base-100 shadow-sm ">
+    <div className="navbar bg-base-100 shadow-sm">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -72,8 +75,32 @@ const Header = () => {
         </ul>
       </div>
 
-      <div className="navbar-end">
-        <a className="btn">Button</a>
+      <div className="navbar-end gap-4">
+        {users ? (
+          <>
+        
+            <div className="flex items-center gap-2">
+              {users.photoURL && (
+                <img
+                  src={users.photoURL}
+                  alt="profile"
+                  className="w-8 h-8 rounded-full border"
+                />
+              )}
+              <span>{users.displayName || users.email}</span>
+            </div>
+            <button onClick={logOut} className="btn btn-outline">Logout</button>
+          </>
+        ) : (
+          <>
+            <NavLink to="/login" className="btn">
+              Login
+            </NavLink>
+            <NavLink to="/register" className="btn">
+              Register
+            </NavLink>
+          </>
+        )}
       </div>
     </div>
   );
