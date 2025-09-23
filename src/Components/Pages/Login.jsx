@@ -8,6 +8,19 @@ const Login = () => {
   console.log(location)
   const navigate = useNavigate()
 
+  const handleGoogle = ()=>{
+    handaleGoogleSignIn()
+    .then(res=>{
+      console.log(res.user ,'google user login v')
+      navigate(location?.state?location.state: "/")
+    })
+    .catch(err=>{
+      console.log(err)
+    })
+  }
+
+ 
+
   const handaleSignUp = e=>{
     e.preventDefault()
     const form = e.target;
@@ -73,7 +86,8 @@ const Login = () => {
       <div className="w-1/3 flex flex-col justify-center items-center gap-4">
         <p className="text-gray-500">Or continue with</p>
         <button
-          onClick={handaleGoogleSignIn}
+          onClick={handleGoogle}
+        
           className="btn btn-outline w-full"
         >
           Google Login

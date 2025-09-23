@@ -2,6 +2,7 @@ import { useRef } from "react";
 import ApplyVisaModal from "./ApplyVisaModal";
 
 const VisaDetailsCard = ({ visa }) => {
+  console.log(visa, 'visa details cardds')
   const { method, img, fee, description, country, age, visaType, validity, time } = visa;
 
   const modalRef = useRef(null);
@@ -71,7 +72,7 @@ const VisaDetailsCard = ({ visa }) => {
         </div>
       </div>
 
-      <ApplyVisaModal country={country} modalRef={modalRef}></ApplyVisaModal>
+      <ApplyVisaModal visa={visa} country={country} modalRef={modalRef}></ApplyVisaModal>
     </>
   );
 };

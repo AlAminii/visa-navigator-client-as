@@ -1,6 +1,13 @@
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
+
 const AddVisa = () => {
+  const {users} = useContext(AuthContext)
+    console.log(users, 'userss sss ss ')
 
   const handleAddVisa = (e) => {
+    
+  
     e.preventDefault();
     const form = e.target;
     const img = form.img.value;
@@ -13,19 +20,29 @@ const AddVisa = () => {
     const validity = form.validity.value;
     const method = form.method.value;
 
-    const users = { img, country, visaType, time, description, fee, age, validity, method };
-    console.log(users);
+
+    const visaData = {
+       img, country, visaType, time, description, fee, age, validity, method,
+      
+       UserEmail: users?.email,
+       usersName:users?.displayName,
+       usersPhoto:users?.photoURL,
+       createdAt: new Date() 
+
+      
+      };
+    console.log(visaData);
 
     fetch('http://localhost:5000/visa',{
       method:'POST',
       headers:{
         'content-type': 'application/json'
       },
-      body:JSON.stringify(users)
+      body:JSON.stringify(visaData)
     })
     .then(res=>res.json())
     .then(data=>{
-      console.log(data)
+      console.log(data, 'modal apply')
     })
 
   };

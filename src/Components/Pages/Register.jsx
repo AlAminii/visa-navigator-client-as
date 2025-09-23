@@ -1,66 +1,113 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
-import { useNavigate } from "react-router-dom";
-
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Register = () => {
-const {createUser, setUsers, updateUserProfile} = useContext(AuthContext)
-const navigate = useNavigate()
-    const handaleRegister = e=>{
-        e.preventDefault()
-        const form = e.target;
-        const name = form.name.value;
-        const email = form.email.value;
-        const photo = form.photo.value;
-        const pass = form.pass.value;
-        console.log(name, email, photo,pass)
-        createUser(email,pass)
-        .then(res=>{
-            console.log(res.user)
-            updateUserProfile({displayName:name, photoURL:photo})
-            .then(()=>{
-              navigate("/")
+  const { createUser, setUsers, updateUserProfile , handaleGoogleSignIn} = useContext(AuthContext);
+  const navigate = useNavigate();
 
-            })
-            .catch(err=>{
-              console.log(err)
-            })
-          
-        })
-        .catch(err=>{
-            console.log(err)
-        })
-    }
+  const location = useLocation()
 
+    const handleGoogle = ()=>{
+    handaleGoogleSignIn()
+    .then(res=>{
+      console.log(res.user ,'google user login v')
+      navigate(location?.state?location.state: "/")
+    })
+    .catch(err=>{
+      console.log(err)
+    })
+  }
 
-    return (
-          <form onSubmit={handaleRegister} className="space-y-3">
-         <div className="flex justify-center items-center mt-4">
-             <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-1/2 border p-4">
-             
-            <label className="label"> Name</label>
-            <input name="name"  type="text" className="input input-bordered w-full" placeholder="your name" />
+  const handaleRegister = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const photo = form.photo.value;
+    const pass = form.pass.value;
 
-            <label className="label">Image URL:</label>
-<input type="url"  className="input input-bordered w-full" name="photo" placeholder="Enter image URL here"></input>
-            
-            <label className="label">Email</label>
-            <input name="email" type="email" className="input input-bordered w-full" placeholder="email" />
+    createUser(email, pass)
+      .then((res) => {
+        const loggedUser = res.user;
+        updateUserProfile({ displayName: name, photoURL: photo })
+          .then(() => {
+            setUsers({
+              ...loggedUser,
+              displayName: name,
+              photoURL: photo,
+            });
+            navigate("/");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      });
+  };
 
-            <label className="label">Password</label>
-            <input name="pass" type="password" className="input input-bordered w-full" />
+  return (
+    <div className="flex justify-center items-center min-h-screen bg-base-200">
+      <div className="flex flex-col lg:flex-row gap-10 bg-white p-8 rounded-2xl shadow-lg w-[90%] lg:w-3/4">
+        
+        
+        <form
+          onSubmit={handaleRegister}
+          className="flex-1 space-y-3 border p-6 rounded-xl shadow-sm bg-base-100"
+        >
+          <h2 className="text-2xl font-bold text-center mb-4">Register</h2>
 
-          
-            <div className=" mt-4">
-              <button type="submit" className="btn btn-outline w-1/2 mr-2">
-                Register
-              </button>
-              
-            </div>
-          </fieldset>
-         </div>
+          <label className="label">Name</label>
+          <input
+            name="name"
+            type="text"
+            className="input input-bordered w-full"
+            placeholder="Your name"
+          />
+
+          <label className="label">Image URL</label>
+          <input
+            type="url"
+            className="input input-bordered w-full"
+            name="photo"
+            placeholder="Enter image URL"
+          />
+
+          <label className="label">Email</label>
+          <input
+            name="email"
+            type="email"
+            className="input input-bordered w-full"
+            placeholder="Email"
+          />
+
+          <label className="label">Password</label>
+          <input
+            name="pass"
+            type="password"
+            className="input input-bordered w-full"
+            placeholder="Password"
+          />
+
+          <button type="submit" className="btn btn-outline w-full mt-4">
+            Register
+          </button>
         </form>
-    );
+
+       
+        <div className="flex-1 flex flex-col justify-center items-center border p-6 rounded-xl shadow-sm bg-base-100">
+          <h2 className="text-xl font-semibold mb-4">Or Continue With</h2>
+          <button onClick={handleGoogle} className="btn btn-outline w-full flex items-center gap-2">
+            <img
+              src="https://www.svgrepo.com/show/475656/google-color.svg"
+              alt="Google"
+              className="w-6 h-6"
+            />
+            Google Login
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Register;

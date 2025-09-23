@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import { StrictMode, useContext } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
@@ -7,7 +7,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import AuthProvider from './Providers/AuthProvider.jsx';
+import AuthProvider, { AuthContext } from './Providers/AuthProvider.jsx';
 
 import MainLayot from './Layout/MainLayot.jsx';
 import Home from './Components/Pages/Home.jsx';
@@ -19,6 +19,8 @@ import Login from './Components/Pages/Login.jsx';
 import Register from './Components/Pages/Register.jsx';
 import VisaDetails from './Components/Pages/VisaDetails.jsx';
 import PrivateRoute from './Routes/PrivateRoute.jsx';
+import Hero from './Components/Pages/Hero.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -27,7 +29,15 @@ const router = createBrowserRouter([
     children:[
       {
         path:"/",
-        element:<Home></Home>
+        element:<Home></Home>,
+         loader: () => fetch(`http://localhost:5000/visa?limit=6`)
+  .then(res => res.json())
+
+      },
+      {
+        path:"/hero",
+        element:<Hero></Hero>,
+      
       },
       {
         path:"/addvisa",
@@ -39,18 +49,22 @@ const router = createBrowserRouter([
       path:"/allvisa",
       element:<Allvisa></Allvisa>,
       loader:()=> fetch('http://localhost:5000/visa')
+      
     },
   {
     path:"/myaddvisa",
     element:<PrivateRoute>
       <MyaddedVisa></MyaddedVisa>
-    </PrivateRoute>
+    </PrivateRoute>,
+   
+    
   },
   {
     path:"/myvisaapplication",
     element:<PrivateRoute>
       <MyvisaApplication></MyvisaApplication>
-    </PrivateRoute>
+    </PrivateRoute>,
+    loader:()=>fetch("http://localhost:5000/applyvisa")
   },
   {
     path:"/visa/:id",
