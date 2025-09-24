@@ -7,7 +7,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import AuthProvider, { AuthContext } from './Providers/AuthProvider.jsx';
+// import AuthProvider, { AuthContext } from './Providers/AuthProvider.jsx';
 
 import MainLayot from './Layout/MainLayot.jsx';
 import Home from './Components/Pages/Home.jsx';
@@ -20,6 +20,7 @@ import Register from './Components/Pages/Register.jsx';
 import VisaDetails from './Components/Pages/VisaDetails.jsx';
 import PrivateRoute from './Routes/PrivateRoute.jsx';
 import Hero from './Components/Pages/Hero.jsx';
+import AuthProvider from './Providers/AuthProvider.jsx';
 
 
 const router = createBrowserRouter([

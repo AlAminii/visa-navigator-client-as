@@ -1,10 +1,18 @@
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 
 const Header = () => {
   const { users, logOut } = useContext(AuthContext);
+  const navigate = useNavigate()
   console.log("Header Users:", users);
+
+  const handaleLogOut = ()=>{
+    logOut()
+    .then(()=>{
+navigate("/login")
+    })
+  }
 
   const navlinks = [
     { path: "/", label: "Home" },
@@ -89,7 +97,7 @@ const Header = () => {
               )}
               <span>{users.displayName || users.email}</span>
             </div>
-            <button onClick={logOut} className="btn btn-outline">Logout</button>
+            <button onClick={handaleLogOut} className="btn btn-outline">Logout</button>
           </>
         ) : (
           <>

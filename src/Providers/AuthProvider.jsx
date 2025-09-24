@@ -6,9 +6,11 @@ import { useNavigate } from "react-router-dom";
 export const AuthContext = createContext()
 const auth = getAuth(app)
 
-const navigate = useNavigate()
+
 
 const AuthProvider = ({children}) => {
+
+  
 
     const [users,setUsers] = useState(null)
     console.log(users)
@@ -37,7 +39,7 @@ const AuthProvider = ({children}) => {
         .then(()=>{
             setUsers(null)
             setLoading(false)
-            navigate("/login")
+           
             
         })
         .catch(err=>{

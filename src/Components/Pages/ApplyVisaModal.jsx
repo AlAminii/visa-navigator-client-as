@@ -8,7 +8,7 @@ const ApplyVisaModal = ({ country, modalRef, visa }) => {
 const {users} = useContext(AuthContext)
 
 
-  console.log(visa, 'visa visa')
+  console.log(visa, 'visa visa') 
   console.log(country ,"from country data",)
 
 
