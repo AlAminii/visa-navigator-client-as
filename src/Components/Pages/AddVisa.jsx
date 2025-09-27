@@ -5,47 +5,55 @@ const AddVisa = () => {
   const {users} = useContext(AuthContext)
     console.log(users, 'userss sss ss ')
 
-  const handleAddVisa = (e) => {
-    
-  
-    e.preventDefault();
-    const form = e.target;
-    const img = form.img.value;
-    const country = form.country.value;
-    const visaType = form.visaType.value;
-    const time = form.time.value;
-    const description = form.description.value;
-    const fee = form.fee.value;
-    const age = form.age.value;
-    const validity = form.validity.value;
-    const method = form.method.value;
+const handleAddVisa = (e) => {
+  e.preventDefault();
+  const form = e.target;
 
+  if (!users) {
+    alert("Please login before adding a visa!");
+    return;  // user na thakle ekhanei stop kore dibo
+  }
 
-    const visaData = {
-       img, country, visaType, time, description, fee, age, validity, method,
-      
-       UserEmail: users?.email,
-       usersName:users?.displayName,
-       usersPhoto:users?.photoURL,
-       createdAt: new Date() 
+  const img = form.img.value;
+  const country = form.country.value;
+  const visaType = form.visaType.value;
+  const time = form.time.value;
+  const description = form.description.value;
+  const fee = form.fee.value;
+  const age = form.age.value;
+  const validity = form.validity.value;
+  const method = form.method.value;
 
-      
-      };
-    console.log(visaData);
-
-    fetch('http://localhost:5000/visa',{
-      method:'POST',
-      headers:{
-        'content-type': 'application/json'
-      },
-      body:JSON.stringify(visaData)
-    })
-    .then(res=>res.json())
-    .then(data=>{
-      console.log(data, 'modal apply')
-    })
-
+  const visaData = {
+    img,
+    country,
+    visaType,
+    time,
+    description,
+    fee,
+    age,
+    validity,
+    method,
+    UserEmail: users?.email || "",       // safe access
+    usersName: users?.displayName || "", // safe access
+    usersPhoto: users?.photoURL || "",
+    createdAt: new Date(),
   };
+
+  console.log(visaData);
+
+  fetch("http://localhost:5000/visa", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(visaData),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data, "modal apply");
+    });
+};
 
   return (
     <div className="min-h-screen flex justify-center items-center bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 py-10 px-4">

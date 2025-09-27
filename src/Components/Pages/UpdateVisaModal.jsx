@@ -17,7 +17,23 @@ const UpdateVisaModal = ({ visa }) => {
       method: form.method.value,
     };
 
+   
+
+    
+
     console.log("Updated Visa Data:", updatedVisa);
+
+    fetch(`http://localhost:5000/visa/${visa._id}`,{
+      method:'put',
+    headers:{
+      'content-type':'application/json'
+    },
+  body:JSON.stringify(updatedVisa)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      console.log(data, 'update visa information')
+    })
   };
 
   return (
@@ -28,7 +44,7 @@ const UpdateVisaModal = ({ visa }) => {
         </h3>
 
         <form onSubmit={handleUpdate} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Country Image */}
+         
           <div className="form-control">
             <label className="label font-medium">Country Image (URL)</label>
             <input
@@ -39,7 +55,7 @@ const UpdateVisaModal = ({ visa }) => {
             />
           </div>
 
-          {/* Country Name */}
+         
           <div className="form-control">
             <label className="label font-medium">Country Name</label>
             <input
@@ -50,7 +66,7 @@ const UpdateVisaModal = ({ visa }) => {
             />
           </div>
 
-          {/* Visa Type */}
+        
           <div className="form-control">
             <label className="label font-medium">Visa Type</label>
             <select name="visaType" className="select select-bordered" defaultValue={visa.visaType}>
@@ -61,7 +77,7 @@ const UpdateVisaModal = ({ visa }) => {
             </select>
           </div>
 
-          {/* Processing Time */}
+         
           <div className="form-control">
             <label className="label font-medium">Processing Time</label>
             <input
@@ -72,7 +88,7 @@ const UpdateVisaModal = ({ visa }) => {
             />
           </div>
 
-          {/* Description */}
+      
           <div className="form-control col-span-1 md:col-span-2">
             <label className="label font-medium">Description</label>
             <textarea
@@ -82,7 +98,7 @@ const UpdateVisaModal = ({ visa }) => {
             ></textarea>
           </div>
 
-          {/* Age Restriction */}
+          
           <div className="form-control">
             <label className="label font-medium">Age Restriction</label>
             <input
@@ -93,7 +109,7 @@ const UpdateVisaModal = ({ visa }) => {
             />
           </div>
 
-          {/* Fee */}
+       
           <div className="form-control">
             <label className="label font-medium">Fee (USD)</label>
             <input
@@ -104,7 +120,7 @@ const UpdateVisaModal = ({ visa }) => {
             />
           </div>
 
-          {/* Validity */}
+          
           <div className="form-control">
             <label className="label font-medium">Validity</label>
             <input
@@ -115,7 +131,7 @@ const UpdateVisaModal = ({ visa }) => {
             />
           </div>
 
-          {/* Application Method */}
+         
           <div className="form-control">
             <label className="label font-medium">Application Method</label>
             <input
@@ -126,7 +142,7 @@ const UpdateVisaModal = ({ visa }) => {
             />
           </div>
 
-          {/* Buttons */}
+        
           <div className="col-span-1 md:col-span-2 flex justify-end gap-4 mt-4">
             <button type="button" className="btn" onClick={() => document.getElementById("my_modal_1").close()}>
               Cancel

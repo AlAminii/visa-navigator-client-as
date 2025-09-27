@@ -10,7 +10,7 @@ const Home = () => {
   const visas = useLoaderData()
   console.log(visas)
   return (
-    <div className="border border-red-500">
+    <div className="border bg-gradient-to-r from-indigo-500 to-teal-400 text-white p-8">
       <Banner></Banner>
       <div className="mt-8 bg-[#120f65] p-4">
         <LatestMarque></LatestMarque>

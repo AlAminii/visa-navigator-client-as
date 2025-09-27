@@ -7,6 +7,21 @@ const MyaddedVisa = () => {
   const [visas, setVisas] = useState([]);
   const [selectedVisa, setSelectedVisa] = useState(null);
 
+  const handaleDelate = _id =>{
+    console.log(_id, 'delete kore chai id ta')
+
+    fetch(`http://localhost:5000/visa/${_id}`,{
+      method: 'DELETE',
+
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      console.log(data)
+      const remaining = visas.filter(visa=> visa._id !==_id)
+      setVisas(remaining)
+    })
+  }
+
   useEffect(() => {
     if (users?.email) {
       fetch(`http://localhost:5000/visa?email=${users.email}`)
@@ -48,7 +63,7 @@ const MyaddedVisa = () => {
                 Update
               </button>
 
-              <button className="btn btn-outline">Delete</button>
+              <button onClick={()=>handaleDelate(visa._id)} className="btn btn-outline">Delete</button>
             </div>
           </div>
         ))}
