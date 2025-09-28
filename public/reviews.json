@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "position": "Tourist",
+    "image": "https://i.pravatar.cc/100?img=1",
+    "rating": 5,
+    "text": "Great service! I am very satisfied. The process was smooth and all my questions were answered promptly."
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "position": "Manager",
+    "image": "https://i.pravatar.cc/100?img=2",
+    "rating": 4,
+    "text": "Very professional and helpful team. I highly recommend their services to anyone looking for a hassle-free experience."
+  },
+  {
+    "id": 3,
+    "name": "Mike Johnson",
+    "position": "Business",
+    "image": "https://i.pravatar.cc/100?img=3",
+    "rating": 5,
+    "text": "Awesome experience, I’ll recommend to others! The staff was attentive and the visa processing was very efficient."
+  },
+  {
+    "id": 4,
+    "name": "Emily Davis",
+    "position": "Student",
+    "image": "https://i.pravatar.cc/100?img=4",
+    "rating": 4,
+    "text": "I had a wonderful experience. The guidance provided was clear and very helpful throughout the entire process."
+  },
+  {
+    "id": 5,
+    "name": "Robert Brown",
+    "position": "Tourist",
+    "image": "https://i.pravatar.cc/100?img=5",
+    "rating": 5,
+    "text": "Excellent service! They helped me with all the documents and made everything very easy and stress-free."
+  },
+  {
+    "id": 6,
+    "name": "Sophia Wilson",
+    "position": "Manager",
+    "image": "https://i.pravatar.cc/100?img=6",
+    "rating": 5,
+    "text": "I am extremely happy with their service. The team was knowledgeable, efficient, and very supportive at every step."
+  }
+]

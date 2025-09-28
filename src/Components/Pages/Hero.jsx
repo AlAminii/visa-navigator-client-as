@@ -1,3 +1,4 @@
+import ClientFeedback from "../ExtraComponents/ClientFeedback";
 import AllvisaCard from "./AllvisaCard";
 import { Link } from "react-router-dom";
 
@@ -16,6 +17,9 @@ const Hero = ({ visas }) => {
             See All Visa
           </button>
         </Link>
+      </div>
+      <div className="bg-[#080f28] border-blue-500 p-6 mt-4 rounded-xl ">
+      <ClientFeedback></ClientFeedback>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import Footer from "../Components/Pages/Footer";
 
 const MainLayot = () => {
     return (
-        <div className="border border-green-600 max-w-7xl mx-auto p-4">
+        <div className="border border-green-600 max-w-9xl w-full mx-auto ">
             <Header></Header>
             <Outlet></Outlet>
             
