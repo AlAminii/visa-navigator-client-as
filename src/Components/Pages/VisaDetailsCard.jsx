@@ -28,7 +28,7 @@ const VisaDetailsCard = ({ visa }) => {
         <div className="hero-content text-center md:text-start gap-10 text-white">
       <div className="md:flex gap-6">
             
-        <div className="md:w-1/2">
+        <div className="flex justify-center items-center  md:w-1/2">
             <div className="max-w-lg space-y-6 border border-red-400">
             <h1 className="text-4xl font-extrabold ">{country} Visa</h1>
             <p className="text-gray-200 leading-relaxed">{description}</p>

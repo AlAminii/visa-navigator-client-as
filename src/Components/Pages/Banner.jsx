@@ -5,7 +5,7 @@ import banner3 from "../../assets/img/banner3.jpg";
 const Banner = () => {
   return (
     <div className="carousel w-full h-[300px] md:h-[400px] lg:h-[500px] rounded-xl overflow-hidden">
-      {/* Slide 1 */}
+    
       <div id="slide1" className="carousel-item relative w-full">
         <img src={banner1} className="w-full h-full object-cover" />
 
@@ -31,7 +31,6 @@ const Banner = () => {
         </div>
       </div>
 
-      {/* Slide 2 */}
       <div id="slide2" className="carousel-item relative w-full">
         <img src={banner2} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-4">
@@ -55,7 +54,7 @@ const Banner = () => {
         </div>
       </div>
 
-      {/* Slide 3 */}
+     
       <div id="slide3" className="carousel-item relative w-full">
         <img src={banner3} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-4">

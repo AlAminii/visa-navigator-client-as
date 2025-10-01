@@ -1,4 +1,5 @@
 import ClientFeedback from "../ExtraComponents/ClientFeedback";
+import FaqSection from "../ExtraComponents/FaqSection";
 import AllvisaCard from "./AllvisaCard";
 import { Link } from "react-router-dom";
 
@@ -20,6 +21,10 @@ const Hero = ({ visas }) => {
       </div>
       <div className="bg-[#080f28] border-blue-500 p-6 mt-4 rounded-xl ">
       <ClientFeedback></ClientFeedback>
+      </div>
+
+      <div>
+        <FaqSection></FaqSection>
       </div>
     </div>
   );
