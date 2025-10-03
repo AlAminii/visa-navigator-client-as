@@ -7,6 +7,7 @@ const MyaddedVisa = () => {
   const { users } = useContext(AuthContext);
   const [visas, setVisas] = useState([]);
   const [selectedVisa, setSelectedVisa] = useState(null);
+  const [loading, setLoading] = useState(true)
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleDelete = (_id) => {

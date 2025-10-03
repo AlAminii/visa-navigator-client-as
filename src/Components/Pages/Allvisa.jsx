@@ -1,19 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { Slide, Fade } from "react-awesome-reveal";
 import AllvisaCard from "./AllvisaCard";
+import Loading from "./Loading";
+
 
 const Allvisa = () => {
   const loadedVisa = useLoaderData();
+    const [loading, setLoading] = useState(true)
   const [visas, setVisas] = useState(loadedVisa);
   const [selectedFilter, setSelectedFilter] = useState("All");
 
-  // Filter function
+  useEffect(() => {
+    if (loadedVisa) {
+      setLoading(false);
+    }
+  }, [loadedVisa]);
+
+  if (loading) {
+    return <Loading />;
+  }
+
+ 
   const handleFilter = (visaType) => {
     setSelectedFilter(visaType);
   };
 
-  // Filtered visas
+
   const filteredVisas = selectedFilter === "All" 
     ? visas 
     : visas.filter(visa => visa.visaType === selectedFilter);
