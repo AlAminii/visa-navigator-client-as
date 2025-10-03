@@ -21,76 +21,71 @@ import VisaDetails from './Components/Pages/VisaDetails.jsx';
 import PrivateRoute from './Routes/PrivateRoute.jsx';
 import Hero from './Components/Pages/Hero.jsx';
 import AuthProvider from './Providers/AuthProvider.jsx';
+import { HelmetProvider } from 'react-helmet-async';
+import Error from './Components/Pages/Error';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayot></MainLayot>,
-    children:[
+    element: <MainLayot />,
+    errorElement: <Error />, // এটা root level error boundary
+    children: [
       {
-        path:"/",
-        element:<Home></Home>,
-         loader: () => fetch(`http://localhost:5000/visa?limit=6`)
-  .then(res => res.json())
-
+        path: "/",
+        element: <Home />,
+        loader: () => fetch(`http://localhost:5000/visa?limit=6`).then(res => res.json())
       },
       {
-        path:"/hero",
-        element:<Hero></Hero>,
-      
+        path: "/hero",
+        element: <Hero />,
       },
       {
-        path:"/addvisa",
-        element:<PrivateRoute>
-          <AddVisa></AddVisa>
-        </PrivateRoute>
+        path: "/addvisa",
+        element: <PrivateRoute><AddVisa /></PrivateRoute>
       },
-    {
-      path:"/allvisa",
-      element:<Allvisa></Allvisa>,
-      loader:()=> fetch('http://localhost:5000/visa')
-      
-    },
-  {
-    path:"/myaddvisa",
-    element:<PrivateRoute>
-      <MyaddedVisa></MyaddedVisa>
-    </PrivateRoute>,
-   
-    
-  },
-  {
-    path:"/myvisaapplication",
-    element:<PrivateRoute>
-      <MyvisaApplication></MyvisaApplication>
-    </PrivateRoute>,
-    loader:()=>fetch("http://localhost:5000/applyvisa")
-  },
-  {
-    path:"/visa/:id",
-    element:<PrivateRoute>
-      <VisaDetails></VisaDetails>
-    </PrivateRoute>,
-    loader:({params})=> fetch(`http://localhost:5000/visa/${params.id}`)
-  },
-  {
-    path:"/login",
-    element:<Login></Login>
-  },
-  {
-    path:"/register",
-    element:<Register></Register>
-  }
-
+      {
+        path: "/allvisa",
+        element: <Allvisa />,
+        loader: () => fetch('http://localhost:5000/visa')
+      },
+      {
+        path: "/myaddvisa",
+        element: <PrivateRoute><MyaddedVisa /></PrivateRoute>
+      },
+      {
+        path: "/myvisaapplication",
+        element: <PrivateRoute><MyvisaApplication /></PrivateRoute>,
+        loader: () => fetch("http://localhost:5000/applyvisa")
+      },
+      {
+        path: "/visa/:id",
+        element: <PrivateRoute><VisaDetails /></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/visa/${params.id}`)
+      },
+      {
+        path: "/login",
+        element: <Login />
+      },
+      {
+        path: "/register",
+        element: <Register />
+      },
+      // ✅ catch-all route for undefined URLs
+      {
+        path: "*",
+        element: <Error />
+      }
     ]
-  },
+  }
 ]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
- <AuthProvider>
+<HelmetProvider>
+   <AuthProvider>
      <RouterProvider router={router} />
  </AuthProvider>
+</HelmetProvider>
   </StrictMode>,
 )

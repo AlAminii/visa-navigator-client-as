@@ -1,6 +1,9 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
+
+
 
 const AddVisa = () => {
   const { users } = useContext(AuthContext);
@@ -94,7 +97,13 @@ const AddVisa = () => {
   };
 
   return (
-    <div
+    
+<>
+<Helmet>
+  <title>Visa | AddVisa</title>
+</Helmet>
+ <div
+    
       className="min-h-screen flex justify-center items-center py-10 px-4"
       style={{
         background: "linear-gradient(135deg, #080f28 0%, #0a1239 50%, #1a1f3a 100%)",
@@ -289,6 +298,7 @@ const AddVisa = () => {
         </form>
       </div>
     </div>
+</>
   );
 };
 

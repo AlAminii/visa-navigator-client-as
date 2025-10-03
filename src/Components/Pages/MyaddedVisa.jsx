@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import UpdateVisaModal from "./UpdateVisaModal";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const MyaddedVisa = () => {
   const { users } = useContext(AuthContext);
@@ -75,6 +76,10 @@ const MyaddedVisa = () => {
   }, [users?.email]);
 
   return (
+    <>
+    <Helmet>
+      <title>Visa | MyAdded Visa</title>
+    </Helmet>
     <div
       className="min-h-screen py-10 px-4"
       style={{
@@ -159,7 +164,7 @@ const MyaddedVisa = () => {
           />
         )}
       </div>
-    </div>
+    </div></>
   );
 };
 

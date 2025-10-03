@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import { Slide, Fade } from "react-awesome-reveal";
 import AllvisaCard from "./AllvisaCard";
 import Loading from "./Loading";
+import { Helmet } from "react-helmet-async";
 
 
 const Allvisa = () => {
@@ -32,7 +33,12 @@ const Allvisa = () => {
     : visas.filter(visa => visa.visaType === selectedFilter);
 
   return (
+   <>
+   <Helmet>
+    <title>Visa | All Visa</title>
+   </Helmet>
     <div
+   
       className="min-h-screen py-10 px-4"
       style={{
         background: "linear-gradient(135deg, #080f28 0%, #0a1239 50%, #1a1f3a 100%)",
@@ -136,7 +142,7 @@ const Allvisa = () => {
           </Fade>
         )}
       </div>
-    </div>
+    </div></>
   );
 };
 
