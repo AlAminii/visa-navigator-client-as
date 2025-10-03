@@ -9,7 +9,7 @@ const AddVisa = () => {
     e.preventDefault();
     const form = e.target;
 
-    // Authentication check
+   
     if (!users) {
       Swal.fire({
         icon: "error",

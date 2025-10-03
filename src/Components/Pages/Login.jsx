@@ -37,7 +37,7 @@ const Login = () => {
     const email = form.email.value.trim();
     const pass = form.pass.value.trim();
 
-    // Validation
+    
     if (!email || !pass) {
       return Swal.fire({
         icon: "warning",

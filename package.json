@@ -19,9 +19,11 @@
     "localforage": "^1.10.0",
     "match-sorter": "^8.1.0",
     "react": "^19.1.1",
+    "react-awesome-reveal": "^4.3.1",
     "react-dom": "^19.1.1",
     "react-fast-marquee": "^1.6.5",
     "react-router-dom": "^7.9.1",
+    "react-tooltip": "^5.29.1",
     "sort-by": "^0.0.2",
     "sweetalert": "^2.1.2",
     "sweetalert2": "^11.23.0"
