@@ -116,7 +116,7 @@ const Login = () => {
           <p className="text-center mt-4 text-sm">
             you have no account?{" "}
             <NavLink to="/register" className="text-blue-600 hover:underline">
-              Login
+              Register
             </NavLink>
           </p>
           </fieldset>

@@ -83,7 +83,7 @@ const UpdateVisaModal = ({ visa, setVisas, closeModal }) => {
           onSubmit={handleUpdate}
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
         >
-          {/* Country Image */}
+        
           <div className="form-control">
             <label className="block text-sm font-semibold text-slate-300 mb-2">
               Country Image URL <span className="text-red-400">*</span>
@@ -97,7 +97,7 @@ const UpdateVisaModal = ({ visa, setVisas, closeModal }) => {
             />
           </div>
 
-          {/* Country Name */}
+        
           <div className="form-control">
             <label className="block text-sm font-semibold text-slate-300 mb-2">
               Country Name <span className="text-red-400">*</span>
@@ -111,7 +111,7 @@ const UpdateVisaModal = ({ visa, setVisas, closeModal }) => {
             />
           </div>
 
-          {/* Visa Type */}
+      
           <div className="form-control">
             <label className="block text-sm font-semibold text-slate-300 mb-2">
               Visa Type <span className="text-red-400">*</span>
@@ -131,7 +131,7 @@ const UpdateVisaModal = ({ visa, setVisas, closeModal }) => {
             </select>
           </div>
 
-          {/* Processing Time */}
+       
           <div className="form-control">
             <label className="block text-sm font-semibold text-slate-300 mb-2">
               Processing Time <span className="text-red-400">*</span>
@@ -145,7 +145,7 @@ const UpdateVisaModal = ({ visa, setVisas, closeModal }) => {
             />
           </div>
 
-          {/* Description */}
+        
           <div className="form-control col-span-1 md:col-span-2">
             <label className="block text-sm font-semibold text-slate-300 mb-2">
               Description <span className="text-red-400">*</span>
@@ -159,7 +159,6 @@ const UpdateVisaModal = ({ visa, setVisas, closeModal }) => {
             ></textarea>
           </div>
 
-          {/* Age Restriction */}
           <div className="form-control">
             <label className="block text-sm font-semibold text-slate-300 mb-2">
               Age Restriction <span className="text-red-400">*</span>
@@ -187,7 +186,7 @@ const UpdateVisaModal = ({ visa, setVisas, closeModal }) => {
             />
           </div>
 
-          {/* Validity */}
+         
           <div className="form-control">
             <label className="block text-sm font-semibold text-slate-300 mb-2">
               Validity Period <span className="text-red-400">*</span>
@@ -201,7 +200,7 @@ const UpdateVisaModal = ({ visa, setVisas, closeModal }) => {
             />
           </div>
 
-          {/* Application Method */}
+         
           <div className="form-control">
             <label className="block text-sm font-semibold text-slate-300 mb-2">
               Application Method <span className="text-red-400">*</span>
@@ -215,7 +214,7 @@ const UpdateVisaModal = ({ visa, setVisas, closeModal }) => {
             />
           </div>
 
-          {/* Buttons */}
+          
           <div className="col-span-1 md:col-span-2 flex justify-end gap-4 mt-4">
             <button
               type="button"

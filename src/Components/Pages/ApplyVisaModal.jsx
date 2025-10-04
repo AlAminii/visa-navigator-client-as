@@ -94,7 +94,7 @@ const ApplyVisaModal = ({ country, modalRef, visa }) => {
         </div>
 
         <form onSubmit={handleApply} className="space-y-4">
-          {/* Email */}
+         
           <div className="form-control">
             <label className="block text-sm font-semibold text-slate-300 mb-2">
               Email Address <span className="text-red-400">*</span>
@@ -110,7 +110,7 @@ const ApplyVisaModal = ({ country, modalRef, visa }) => {
             />
           </div>
 
-          {/* First Name & Last Name */}
+        
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="form-control">
               <label className="block text-sm font-semibold text-slate-300 mb-2">
@@ -139,7 +139,7 @@ const ApplyVisaModal = ({ country, modalRef, visa }) => {
             </div>
           </div>
 
-          {/* Applied Date & Fee */}
+        
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="form-control">
               <label className="block text-sm font-semibold text-slate-300 mb-2">
@@ -170,7 +170,6 @@ const ApplyVisaModal = ({ country, modalRef, visa }) => {
             </div>
           </div>
 
-          {/* Visa Info Card */}
           <div className="bg-slate-800/30 border border-slate-700/30 rounded-xl p-4 space-y-2">
             <h4 className="text-sm font-semibold text-slate-300 mb-2">
               Visa Information
@@ -191,7 +190,7 @@ const ApplyVisaModal = ({ country, modalRef, visa }) => {
             </div>
           </div>
 
-          {/* Buttons */}
+        
           <div className="flex gap-3 mt-6">
             <button
               type="submit"
@@ -211,7 +210,7 @@ const ApplyVisaModal = ({ country, modalRef, visa }) => {
         </form>
       </div>
 
-      {/* Backdrop */}
+     
       <form method="dialog" className="modal-backdrop">
         <button>close</button>
       </form>

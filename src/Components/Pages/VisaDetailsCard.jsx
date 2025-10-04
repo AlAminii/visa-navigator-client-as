@@ -122,7 +122,7 @@ const VisaDetailsCard = ({ visa }) => {
                   </div>
                 </div>
 
-                {/* Apply Button */}
+          
                 <button
                   className="w-full py-5 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-bold text-lg rounded-2xl shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2"
                   onClick={openModal}
@@ -133,7 +133,6 @@ const VisaDetailsCard = ({ visa }) => {
               </div>
             </div>
 
-            {/* Additional Info Section */}
             <div className="mt-12 bg-gradient-to-r from-blue-600/10 to-cyan-600/10 backdrop-blur-sm rounded-2xl p-6 border border-blue-500/20">
               <div className="flex items-center gap-3 text-slate-300">
                 <span className="text-2xl">💡</span>

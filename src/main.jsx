@@ -29,7 +29,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayot />,
-    errorElement: <Error />, // এটা root level error boundary
+    errorElement: <Error />, 
     children: [
       {
         path: "/",
@@ -71,7 +71,7 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register />
       },
-      // ✅ catch-all route for undefined URLs
+    
       {
         path: "*",
         element: <Error />
