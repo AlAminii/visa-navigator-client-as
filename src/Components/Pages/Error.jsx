@@ -8,7 +8,7 @@ const Error = () => {
             <Helmet>
                 <title>Visa | Error</title>
             </Helmet>
-            <p className="text-5xl font-bold text-center mt-8 ">
+            <p className="text-5xl font-bold text-center mt-8; ">
                 404 This page not found
             </p>
             <div className="text-center">
