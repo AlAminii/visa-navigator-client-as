@@ -29,7 +29,7 @@ const MyaddedVisa = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            // console.log(data);
             const remaining = visas.filter((visa) => visa._id !== _id);
             setVisas(remaining);
 
@@ -71,7 +71,7 @@ const MyaddedVisa = () => {
       fetch(`http://localhost:5000/visa?email=${users.email}`)
         .then((res) => res.json())
         .then((data) => setVisas(data))
-        .catch((err) => console.log(err));
+        .catch((err) => setLoading(false));
     }
   }, [users?.email]);
 

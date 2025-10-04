@@ -51,7 +51,7 @@ const ApplyVisaModal = ({ country, modalRef, visa }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.insertedId) {
           Swal.fire({
             icon: "success",
@@ -68,7 +68,7 @@ const ApplyVisaModal = ({ country, modalRef, visa }) => {
         }
       })
       .catch((error) => {
-        console.error(error);
+        // console.error(error);
         Swal.fire({
           icon: "error",
           title: "Oops...",

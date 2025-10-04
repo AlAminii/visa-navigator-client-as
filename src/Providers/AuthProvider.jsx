@@ -13,7 +13,7 @@ const AuthProvider = ({children}) => {
   
 
     const [users,setUsers] = useState(null)
-    console.log(users)
+    // console.log(users)
     const [loading, setLoading] = useState(true)
     const provider = new GoogleAuthProvider()
 
@@ -43,7 +43,7 @@ const AuthProvider = ({children}) => {
             
         })
         .catch(err=>{
-            console.log(err)
+            // console.log(err)
             setLoading(false)
         })
     }
@@ -66,7 +66,7 @@ const AuthProvider = ({children}) => {
 
     useEffect(()=>{
       const unsubsCribe= onAuthStateChanged(auth, (currentUser)=>{
-        console.log(currentUser)
+        // console.log(currentUser)
         setUsers(currentUser)
         setLoading(false)
       })

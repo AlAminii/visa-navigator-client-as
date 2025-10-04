@@ -12,7 +12,7 @@ const Login = () => {
   const handleGoogle = () => {
     handaleGoogleSignIn()
       .then((res) => {
-        console.log(res.user, "google user login v");
+        // console.log(res.user, "google user login v");
         Swal.fire({
           icon: "success",
           title: "Login Successful",
@@ -21,7 +21,7 @@ const Login = () => {
         navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
         Swal.fire({
           icon: "error",
           title: "Login Failed",
@@ -56,7 +56,7 @@ const Login = () => {
 
     handaleSignIn(email, pass)
       .then((res) => {
-        console.log(res.user);
+        // console.log(res.user);
         Swal.fire({
           icon: "success",
           title: "Login Successful",
@@ -65,7 +65,7 @@ const Login = () => {
         navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
         Swal.fire({
           icon: "error",
           title: "Login Failed",

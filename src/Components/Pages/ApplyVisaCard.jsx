@@ -124,7 +124,7 @@ const ApplyVisaCard = ({ applyVisa, applyVisas, setApplyVisas }) => {
           </div>
         </div>
 
-        {/* Applicant Info */}
+        
         <div className="bg-slate-800/30 p-4 rounded-lg mb-4 border border-slate-700/30">
           <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">
             Applicant Information

@@ -9,7 +9,7 @@ const FeedbackSection = () => {
     fetch('/reviews.json')
       .then(res => res.json())
       .then(data => {
-        console.log(data, 'review data');
+        // console.log(data, 'review data');
         setReviews(data);
       });
   }, []);

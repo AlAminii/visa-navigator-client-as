@@ -12,12 +12,12 @@ const Register = () => {
   const handleGoogle = () => {
     handaleGoogleSignIn()
       .then((res) => {
-        console.log(res.user, "google user login v");
+        // console.log(res.user, "google user login v");
         Swal.fire("Success", "Google login successful!", "success");
         navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
         Swal.fire("Error", err.message, "error");
       });
   };
@@ -67,7 +67,7 @@ const Register = () => {
             navigate("/");
           })
           .catch((err) => {
-            console.log(err);
+            // console.log(err);
             Swal.fire("Error", err.message, "error");
           });
       })

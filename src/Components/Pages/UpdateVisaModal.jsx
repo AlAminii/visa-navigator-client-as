@@ -172,7 +172,7 @@ const UpdateVisaModal = ({ visa, setVisas, closeModal }) => {
             />
           </div>
 
-          {/* Fee */}
+          
           <div className="form-control">
             <label className="block text-sm font-semibold text-slate-300 mb-2">
               Fee (USD) <span className="text-red-400">*</span>
