@@ -42,7 +42,7 @@ const ApplyVisaModal = ({ country, modalRef, visa }) => {
       },
     });
 
-    fetch("http://localhost:5000/applyvisa", {
+    fetch("https://visa-navigator-server-as.onrender.com/applyvisa", {
       method: "POST",
       headers: {
         "content-type": "application/json",

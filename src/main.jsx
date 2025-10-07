@@ -34,7 +34,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch(`http://localhost:5000/visa?limit=6`).then(res => res.json())
+        loader: () => fetch(`https://visa-navigator-server-as.onrender.com/visa?limit=6`).then(res => res.json())
       },
       {
         path: "/hero",
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
       {
         path: "/allvisa",
         element: <Allvisa />,
-        loader: () => fetch('http://localhost:5000/visa')
+        loader: () => fetch('https://visa-navigator-server-as.onrender.com/visa')
       },
       {
         path: "/myaddvisa",
@@ -56,12 +56,12 @@ const router = createBrowserRouter([
       {
         path: "/myvisaapplication",
         element: <PrivateRoute><MyvisaApplication /></PrivateRoute>,
-        loader: () => fetch("http://localhost:5000/applyvisa")
+        loader: () => fetch("https://visa-navigator-server-as.onrender.com/applyvisa")
       },
       {
         path: "/visa/:id",
         element: <PrivateRoute><VisaDetails /></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/visa/${params.id}`)
+        loader: ({ params }) => fetch(`https://visa-navigator-server-as.onrender.com/visa/${params.id}`)
       },
       {
         path: "/login",

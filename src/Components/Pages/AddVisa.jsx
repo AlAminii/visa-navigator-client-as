@@ -63,7 +63,7 @@ const AddVisa = () => {
       },
     });
 
-    fetch("http://localhost:5000/visa", {
+    fetch("https://visa-navigator-server-as.onrender.com/visa", {
       method: "POST",
       headers: {
         "content-type": "application/json",

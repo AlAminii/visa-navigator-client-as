@@ -30,7 +30,7 @@ const UpdateVisaModal = ({ visa, setVisas, closeModal }) => {
       },
     });
 
-    fetch(`http://localhost:5000/visa/${visa._id}`, {
+    fetch(`https://visa-navigator-server-as.onrender.com/visa/${visa._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

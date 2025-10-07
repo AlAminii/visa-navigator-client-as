@@ -15,7 +15,7 @@ const ApplyVisaCard = ({ applyVisa, applyVisas, setApplyVisas }) => {
       color: "#e2e8f0",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/applyvisa/${id}`, {
+        fetch(`https://visa-navigator-server-as.onrender.com/applyvisa/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

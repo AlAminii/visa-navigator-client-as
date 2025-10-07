@@ -24,7 +24,7 @@ const MyaddedVisa = () => {
       color: "#e2e8f0",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/visa/${_id}`, {
+        fetch(`https://visa-navigator-server-as.onrender.com/visa/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -68,7 +68,7 @@ const MyaddedVisa = () => {
 
   useEffect(() => {
     if (users?.email) {
-      fetch(`http://localhost:5000/visa?email=${users.email}`)
+      fetch(`https://visa-navigator-server-as.onrender.com/visa?email=${users.email}`)
         .then((res) => res.json())
         .then((data) => setVisas(data))
         .catch((err) => setLoading(false));
