@@ -40,8 +40,38 @@ It provides an intuitive and seamless user experience for travelers and administ
 - MongoDB database (Atlas or local)  
 - Firebase project credentials  
 
-### 🧰 Installation  
+
+
+### 🧰 Installation
 
 1. **Clone the repository**
-   ```bash
-   git clone https://github.com/mdalamin120/visa-navigator.git
+
+```bash
+git clone https://github.com/mdalamin120/visa-navigator.git
+```
+
+2. **Install dependencies**
+
+```bash
+npm install
+```
+
+3. **Run the development server**
+
+```bash
+npm run dev
+```
+
+---
+
+### 📬 Contact
+
+💡 Have feedback or suggestions? Let’s connect!
+
+* **Email:** (alaminbdt50@gmail.com)
+* **LinkedIn:** [Md Al Amin](https://www.linkedin.com/in/mohammadalaminsalafi/))
+* **GitHub:**((https://github.com/AlAminii))
+
+
+
+   
