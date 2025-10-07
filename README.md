@@ -1,12 +1,16 @@
-# React + Vite
+🌍 Visa Navigator Portal
+Live Site URL: https://visa-navigator-client-as.web.app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+📋 Project Overview
+Visa Navigator Portal is a complete visa management platform that simplifies the process of exploring, applying, and managing different types of visas from around the world.
+It provides an intuitive and seamless user experience for travelers and administrators alike.
 
-Currently, two official plugins are available:
+✨ Key Features
+🔐 Secure Authentication System — Firebase-powered login with Email/Password and Google Sign-In. Private routes ensure data security for every user.
+🌎 Interactive Visa Catalog — Explore various visa options with country-wise details, types, processing times, and fees.
+📝 Smart Application Management — Apply for visas directly, view your submitted applications, and manage them in real-time.
+🎨 Modern & Responsive UI — Beautiful and smooth interface built with React and Tailwind CSS, optimized for all devices.
+⚡ Real-Time Data Updates — Dynamic backend using Express.js and MongoDB ensures instant updates and smooth performance.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🛠️ Technologies Used
+LayerTechnologiesFrontendReact.js, Tailwind CSS, DaisyUIBackendNode.js, Express.jsDatabaseMongoDBAuthenticationFirebase Authentication (Email/Password, Google)HostingFirebase (Frontend), Render (Backend)
