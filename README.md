@@ -1,6 +1,6 @@
 # 🌍 Visa Navigator Portal  
 
-**Live Site URL:** [https://visa-navigator-client-as.web.app](https://visa-navigator-client-as.web.app)  
+**Live Site URL:** [https://visa-navigator-client-as.web.app](https://visa-navigator-client-as.web.app/login)  
 
 ---
 
