@@ -8,11 +8,9 @@ const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
- 
   const handleGoogle = () => {
     handaleGoogleSignIn()
       .then((res) => {
-        // console.log(res.user, "google user login v");
         Swal.fire({
           icon: "success",
           title: "Login Successful",
@@ -21,7 +19,6 @@ const Login = () => {
         navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
-        // console.log(err);
         Swal.fire({
           icon: "error",
           title: "Login Failed",
@@ -30,14 +27,12 @@ const Login = () => {
       });
   };
 
-
   const handaleSignUp = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value.trim();
     const pass = form.pass.value.trim();
 
-    
     if (!email || !pass) {
       return Swal.fire({
         icon: "warning",
@@ -56,7 +51,6 @@ const Login = () => {
 
     handaleSignIn(email, pass)
       .then((res) => {
-        // console.log(res.user);
         Swal.fire({
           icon: "success",
           title: "Login Successful",
@@ -65,7 +59,6 @@ const Login = () => {
         navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
-        // console.log(err);
         Swal.fire({
           icon: "error",
           title: "Login Failed",
@@ -75,61 +68,57 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center items-center gap-6 mt-6 px-8 py-6">
-  
-      <div className="w-2/3">
-        <form onSubmit={handaleSignUp} className="space-y-3">
-          <h1 className="text-2xl font-bold text-center">Login</h1>
-          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-6">
-            <label className="label">Email</label>
-            <input
-              name="email"
-              type="email"
-              className="input input-bordered w-full"
-              placeholder="email"
-              required
-            />
+    <div className="flex justify-center items-center min-h-screen bg-base-200">
+      <div className="flex flex-col lg:flex-row gap-10 bg-white p-8 rounded-2xl shadow-lg w-[90%] lg:w-3/4">
+        
+     
+        <form
+          onSubmit={handaleSignUp}
+          className="flex-1 space-y-3 border p-6 rounded-xl shadow-sm bg-base-100"
+        >
+          <h2 className="text-2xl font-bold text-center mb-4">Login</h2>
 
-            <label className="label">Password</label>
-            <input
-              name="pass"
-              type="password"
-              className="input input-bordered w-full"
-              placeholder="password"
-              required
-            />
-            <div className="text-left mt-2">
-              <NavLink
-                to="/forgot-password"
-                className="text-sm text-blue-600 hover:underline"
-              >
-                Forgot password?
-              </NavLink>
-            </div>
-            <div className="mt-4">
-              <button type="submit" className="btn btn-outline w-full">
-                Login
-              </button>
-            </div>
+          <label className="label">Email</label>
+          <input
+            name="email"
+            type="email"
+            className="input input-bordered w-full"
+            placeholder="Email"
+            required
+          />
 
-            
+          <label className="label">Password</label>
+          <input
+            name="pass"
+            type="password"
+            className="input input-bordered w-full"
+            placeholder="Password"
+            required
+          />
+
+          <div className="text-left mt-2">
+            <NavLink
+              to="/forgot-password"
+              className="text-sm text-blue-600 hover:underline"
+            >
+              Forgot password?
+            </NavLink>
+          </div>
+
+          <button type="submit" className="btn btn-outline w-full mt-4">
+            Login
+          </button>
+
           <p className="text-center mt-4 text-sm">
-            you have no account?{" "}
+            Don't have an account?{" "}
             <NavLink to="/register" className="text-blue-600 hover:underline">
               Register
             </NavLink>
           </p>
-          </fieldset>
         </form>
-      </div>
 
-
-      <div className="h-full w-px bg-gray-300">
-        <br />
-      </div>
-
-   
-    <div className="flex-1 flex flex-col justify-center items-center border p-6 rounded-xl shadow-sm bg-base-100">
+      
+        <div className="flex-1 flex flex-col justify-center items-center border p-6 rounded-xl shadow-sm bg-base-100">
           <h2 className="text-xl font-semibold mb-4">Or Continue With</h2>
           <button
             onClick={handleGoogle}
@@ -143,6 +132,7 @@ const Login = () => {
             Google Login
           </button>
         </div>
+      </div>
     </div>
   );
 };
