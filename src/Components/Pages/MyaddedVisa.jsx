@@ -3,6 +3,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import UpdateVisaModal from "./UpdateVisaModal";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
+import Loading from "./Loading";
 
 const MyaddedVisa = () => {
   const { users } = useContext(AuthContext);
@@ -68,12 +69,26 @@ const MyaddedVisa = () => {
 
   useEffect(() => {
     if (users?.email) {
+      setLoading(true)
       fetch(`https://visa-navigator-server-as.onrender.com/visa?email=${users.email}`)
         .then((res) => res.json())
-        .then((data) => setVisas(data))
-        .catch((err) => setLoading(false));
-    }
+        .then((data) => {
+          setVisas(data)
+          setLoading(false)
+        })
+        .catch((err) => {
+          setLoading(false)
+        });
+       
+    } 
+    else{
+          setLoading(false)
+        }
   }, [users?.email]);
+  
+  if(loading){
+    return <Loading></Loading>
+  }
 
   return (
     <>
